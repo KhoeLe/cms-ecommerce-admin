@@ -12,6 +12,7 @@ import {
     FormMessage,
     Form,
 } from "@/components/ui/form";
+import ImageUpload from "@/components/ui/images-upload";
 import { Input } from "@/components/ui/input";
 import useOrigin from "@/hooks/use-origin";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -66,13 +67,23 @@ function BillBoardForm({ initialData }: Props) {
             setLoading(true);
 
             console.log(data);
-            const res = await axios.patch(
-                `/api/stores/${params.storeId}`,
-                data
-            );
-            router.refresh();
+            if(initialData){
+                console.log("params_billboardId",params.billboardId);
+                const res = await axios.patch(
+                    `/api/${params.storeId}/billboards/${params.billboardId}`,
+                    data
+                );
 
-            toast.success("Store update successfully");
+            }else{
+                const res = await axios.post(
+                    `/api/${params.storeId}/billboards`,
+                    data
+                );
+            }
+            router.refresh();
+            router.push(`/${params.storeId}/billboards`);
+
+            toast.success(toastMessage);
         } catch (error) {
             toast.error("Something went wrong");
             console.error("Something went wrong", error);
@@ -107,12 +118,15 @@ function BillBoardForm({ initialData }: Props) {
             />
             <div className="flex items-center justify-between">
                 <Heading title={title} description={description} />
-                <Button
-                    variant="destructive"
-                    size="icon"
-                    onClick={() => setOpen(true)}>
-                    <Trash className="h-4 w-4" />
-                </Button>
+                {/* // if initialData is true, then show the button */}
+               {initialData && (
+                 <Button
+                 variant="destructive"
+                 size="icon"
+                 onClick={() => setOpen(true)}>
+                 <Trash className="h-4 w-4" />
+             </Button>
+               )}
             </div>
 
             <Separator />
@@ -121,6 +135,24 @@ function BillBoardForm({ initialData }: Props) {
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="space-y-8 w-full">
+                        <FormField
+                            control={form.control}
+                            name="imageUrl"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Background Images</FormLabel>
+                                    <FormControl>
+                                        <ImageUpload
+                                            disabled={loading}
+                                            onChange={url => field.onChange(url)}
+                                            onRemove={() => field.onChange("")}
+                                            values={field.value ? [field.value] : []}
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
                     <div className="grid grid-cols-3 gap-8">
                         <FormField
                             control={form.control}
@@ -140,6 +172,7 @@ function BillBoardForm({ initialData }: Props) {
                             )}
                         />
                     </div>
+
 
                     <Button
                         className="mt-auto"
