@@ -8,7 +8,7 @@ import { useParams, useRouter } from "next/navigation";
 import { Check, ChevronsUpDown, PlusCircleIcon, StoreIcon } from "lucide-react";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "./ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 
@@ -17,7 +17,7 @@ interface Props extends PopoverTriggerProps{
     items: Store[]
 }
 
-function StoreSwitcher({className, items=[], ...props}: Props) {
+function StoreSwitcher({className, items=[]}: Props) {
 
     const [isOpen, openModal] = useStoreMal((state) => [
         state.isOpen,
@@ -34,9 +34,6 @@ function StoreSwitcher({className, items=[], ...props}: Props) {
     }) )
 
     const currentStore = formattedItems.find((item) => item.value === params.storeId)
-
-
-
     const onStoreSelect = (store: { value: string, label: string }) => {
       setOpen(false);
       router.push(`/${store.value}`);
@@ -44,8 +41,9 @@ function StoreSwitcher({className, items=[], ...props}: Props) {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger >
-        <Button
+        <PopoverTrigger asChild >
+
+     <Button
           variant="outline"
           size="sm"
           role="combobox"
@@ -57,6 +55,7 @@ function StoreSwitcher({className, items=[], ...props}: Props) {
             {currentStore?.label || "Select a store"}
             <ChevronsUpDown className="ml-auto h4 w-4 shrink-0 opacity-50"/>
         </Button>
+
         </PopoverTrigger>
 
         <PopoverContent className="w-[200px] p-0">
