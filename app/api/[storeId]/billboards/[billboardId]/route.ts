@@ -43,3 +43,36 @@ export async function PATCH(
         return new NextResponse("Server Error", { status: 500 });
     }
 }
+
+
+export async function GET(req: Request,  { params }: { params: { billboardId: string } }){
+    try {
+        const billboard =  await prismaDB.billboard.findFirst({
+            where: {
+                id: params.billboardId,
+            }
+        });
+
+        return new NextResponse(JSON.stringify(billboard), { status: 200 });
+
+    } catch (error) {
+        console.error("Store GET Error: ", error);
+        return new NextResponse("Server Error", { status: 500 });
+    }
+}
+
+export async function DELETE(req: Request,  { params }: { params: { billboardId: string } }){
+    try {
+        const billboard =  await prismaDB.billboard.delete({
+            where: {
+                id: params.billboardId,
+            }
+        });
+
+        return new NextResponse(JSON.stringify(billboard), { status: 200 });
+
+    } catch (error) {
+        console.error("Billboard DELETE Error: ", error);
+        return new NextResponse("Server Error", { status: 500 });
+    }
+}

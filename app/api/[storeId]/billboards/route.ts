@@ -43,18 +43,22 @@ export async function POST(
 }
 
 
-// export async function GET(){
-//     try {
-//         const billboards = await prismaDB.billboard.findMany({
-//             include: {
-//                 store: true
-//             }
-//         });
+export async function GET(req: Request,  { params }: { params: { storeId: string } }){
+    try {
+        // const {storeId} = params
 
-//         return new NextResponse(JSON.stringify(billboards), { status: 200 });
-//     } catch (error) {
-//         console.error("Billboard GET Error: ", error);
-//         return new NextResponse("Server Error", { status: 500 });
-//     }
+        console.log(params)
 
-// }
+        const billboard =  await prismaDB.billboard.findMany({
+            where: {
+                storeId: params.storeId,
+            }
+        });
+
+        return new NextResponse(JSON.stringify(billboard), { status: 200 });
+
+    } catch (error) {
+        console.error("Store GET Error: ", error);
+        return new NextResponse("Server Error", { status: 500 });
+    }
+}

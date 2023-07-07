@@ -84,9 +84,14 @@ function BillBoardForm({ initialData }: Props) {
             router.push(`/${params.storeId}/billboards`);
 
             toast.success(toastMessage);
-        } catch (error) {
-            toast.error("Something went wrong");
-            console.error("Something went wrong", error);
+        } catch (error: any) {
+            if(error.response.status === 400){
+                toast.error(error.response.data)
+            }else{
+                toast.error("Something went wrong");
+                console.error("Something went wrong", error);
+            }
+
         } finally {
             setLoading(false);
         }
