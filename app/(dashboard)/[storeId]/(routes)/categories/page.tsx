@@ -12,7 +12,7 @@ async function CategoriesPage() {
             billboard: true,
         },
         orderBy: {
-            id: "desc",
+            createdAt: "desc",
         },
     });
     const formattedCategories: CategoriesColumn[] = categories.map((item) => ({
