@@ -147,7 +147,7 @@ function SizeForm({ initialData }: Props) {
                                     <FormControl>
                                         <Input
                                             disabled={loading}
-                                            placeholder="Name"
+                                            placeholder="Size Name"
                                             {...field}
                                         />
                                     </FormControl>
