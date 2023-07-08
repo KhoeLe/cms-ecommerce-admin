@@ -54,7 +54,7 @@ function SettingsForm({ initialData }: Props) {
 
             console.log(data);
             const res = await axios.patch(
-                `/api/stores/${params.storeId}`,
+                `/api/${params.storeId}`,
                 data
             );
             router.refresh();
@@ -71,7 +71,7 @@ function SettingsForm({ initialData }: Props) {
     const onDelete = async () => {
         try {
             setLoading(true);
-            await axios.delete(`/api/stores/${params.storeId}`);
+            await axios.delete(`/api/${params.storeId}`);
             router.refresh();
             router.push("/");
             toast.success("Store deleted.");
