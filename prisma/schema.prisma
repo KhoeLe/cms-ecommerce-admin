@@ -20,6 +20,7 @@ model Store {
   Categories Category[] @relation("CategoryToStore")
   Sizes Size[] @relation("SizeToStore")
   Colors Color[] @relation("ColorToStore")
+  Products Product[] @relation("ProductToStore")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -46,6 +47,7 @@ model Category {
   store  Store @relation("CategoryToStore", fields: [storeId], references: [id])
   billboardId String
   billboard Billboard @relation("CategoryToBillboard", fields: [billboardId], references: [id])
+  products Product[] @relation("ProductToCategory")
   name String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -59,6 +61,7 @@ model Size{
   id String @id @default(uuid())
   storeId String
   store Store @relation("SizeToStore", fields: [storeId], references: [id])
+  products Product[] @relation("ProductToSize")
   name String
   value String
   createdAt DateTime @default(now())
@@ -72,10 +75,49 @@ model Color {
   id String @id @default(uuid())
   storeId String
   store Store  @relation("ColorToStore", fields: [storeId], references: [id])
+  products Product[] @relation("ProductToColor")
   name String
   value String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([storeId], name: "storeId")
+}
+
+
+model Product{
+  id String @id @default(uuid())
+  storeId String
+  store Store @relation("ProductToStore", fields: [storeId], references: [id])
+  categoryId String
+  category Category @relation("ProductToCategory", fields: [categoryId], references: [id])
+  sizeId String
+  size Size @relation("ProductToSize", fields: [sizeId], references: [id])
+  colorId String
+  color Color @relation("ProductToColor", fields: [colorId], references: [id])
+  images Image[]
+  name String
+  price Decimal
+  isArchived Boolean @default(false)
+  isFeatured Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([storeId], name: "storeId")
+  @@index([categoryId], name: "categoryId")
+  @@index([sizeId], name: "sizeId")
+  @@index([colorId], name: "colorId")
+
+}
+
+
+model Image {
+  id String @id @default(uuid())
+  productId String
+  product Product @relation(fields: [productId], references: [id])
+  url String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([productId], name: "productId")
 }
