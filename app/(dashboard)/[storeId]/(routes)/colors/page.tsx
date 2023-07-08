@@ -2,15 +2,20 @@ import React from "react";
 import BillBoardClient from "./components/client";
 import prismaDB from "@/lib/prismaDB";
 import { format } from "date-fns";
-import CategoryClient from "./components/client";
 import ColorsClient from "./components/client";
 import { ColorsColumn } from "./[colorId]/components/columns";
 
-async function CategoriesPage() {
+interface Props {
+    params: {
+        storeId: string;
+    }
+}
+
+async function ColorsPage({params} : Props) {
     const colors = await prismaDB.color.findMany({
-        include: {
-            store: true,
-        },
+        where: {
+            storeId: params.storeId
+          },
         orderBy: {
             createdAt: "desc",
         },
@@ -31,4 +36,4 @@ async function CategoriesPage() {
     );
 }
 
-export default CategoriesPage;
+export default ColorsPage;

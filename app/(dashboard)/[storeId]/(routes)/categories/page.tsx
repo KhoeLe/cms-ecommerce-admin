@@ -5,8 +5,17 @@ import { format } from "date-fns";
 import { CategoriesColumn } from "./[categoryId]/components/columns";
 import CategoryClient from "./components/client";
 
-async function CategoriesPage() {
+interface Props {
+    params: {
+        storeId: string;
+    };
+}
+
+async function CategoriesPage({ params }: Props) {
     const categories = await prismaDB.category.findMany({
+        where: {
+            storeId: params.storeId,
+        },
         include: {
             store: true,
             billboard: true,

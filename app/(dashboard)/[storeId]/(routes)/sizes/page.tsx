@@ -6,8 +6,17 @@ import CategoryClient from "./components/client";
 import { SizesColumn } from "./[sizeId]/components/columns";
 import SizeClient from "./components/client";
 
-async function CategoriesPage() {
+interface Props {
+    params: {
+        storeId: string;
+    }
+}
+
+async function SizesPage({params}: Props) {
     const sizes = await prismaDB.size.findMany({
+        where: {
+            storeId:params.storeId,
+        },
         include: {
             store: true,
 
@@ -32,4 +41,4 @@ async function CategoriesPage() {
     );
 }
 
-export default CategoriesPage;
+export default SizesPage;

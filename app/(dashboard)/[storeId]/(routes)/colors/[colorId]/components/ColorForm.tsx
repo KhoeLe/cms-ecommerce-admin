@@ -14,7 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import useOrigin from "@/hooks/use-origin";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Billboard, Category, Size } from "@prisma/client";
+import { Billboard, Category, Color, Size } from "@prisma/client";
 import { Separator } from "@radix-ui/react-separator";
 import axios from "axios";
 import { Trash } from "lucide-react";
@@ -25,7 +25,7 @@ import toast from "react-hot-toast";
 import { z } from "zod";
 
 interface Props {
-    initialData: Size | null;
+    initialData: Color | null;
 }
 
 const formSchema = z.object({
