@@ -58,7 +58,7 @@ export async function POST(
     }
 
     const product = await prismaDB.product.create({
-        
+
       data: {
         name,
         price,
@@ -99,6 +99,7 @@ export async function GET(
     if (!params.storeId) {
       return new NextResponse("Store id is required", { status: 400 });
     }
+
 
     const products = await prismaDB.product.findMany({
       where: {

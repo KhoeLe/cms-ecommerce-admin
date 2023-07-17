@@ -46,13 +46,19 @@ export async function PATCH(
 
 export async function GET(req: Request,  { params }: { params: { categoryId: string } }){
     try {
-        const billboard =  await prismaDB.billboard.findFirst({
+
+        console.log( 'hello',params.categoryId)
+
+        const category =  await prismaDB.category.findFirst({
             where: {
-                id: params.categoryId,
-            }
+                id: params.categoryId
+              },
+              include: {
+                billboard: true
+              }
         });
 
-        return new NextResponse(JSON.stringify(billboard), { status: 200 });
+        return new NextResponse(JSON.stringify(category), { status: 200 });
 
     } catch (error) {
         console.error("CategoryId GET Error: ", error);

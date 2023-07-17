@@ -47,7 +47,6 @@ export async function GET(req: Request,  { params }: { params: { storeId: string
     try {
         // const {storeId} = params
 
-        console.log(params)
 
         const sizes =  await prismaDB.size.findMany({
             where: {

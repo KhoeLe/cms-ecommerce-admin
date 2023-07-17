@@ -14,3 +14,5 @@ Function onCopy
         toast.success("API Route copied to clipboard.");
     };
 ```
+
+- start webhook for stripe => stripe listen --forward-to localhost:4242/webhook
