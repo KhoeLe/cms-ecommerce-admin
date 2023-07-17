@@ -21,12 +21,13 @@ async function OrdersPage({ params }: Props) {
                     product: true,
                 }
             }
-
         },
         orderBy: {
             createdAt: "desc",
         },
     });
+
+    console.log(orders)
     const formattedOrders: OrderColumn[] = orders.map((item) => ({
         id: item.id,
         phone: item.phone,

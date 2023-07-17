@@ -20,12 +20,12 @@ function ProductsClient({ data }: Props) {
         <>
             <div className="flex items-center justify-between">
                 <Heading
-                    title={`Orders (${data.length})`}
+                    title={`Orders (${data?.length})`}
                     description="Manage Orders for your store"
                 />
             </div>
             <Separator />
-            <DataTable searchKey="name" columns={columns} data={data} />
+            <DataTable searchKey="products" columns={columns} data={data} />
             {/* <Heading title="API" description="API Calls for orders" />
             <Separator />
             <ApiList entityName="orders" entityIdName="orderId" /> */}

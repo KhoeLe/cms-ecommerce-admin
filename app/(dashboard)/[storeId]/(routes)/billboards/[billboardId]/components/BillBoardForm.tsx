@@ -66,7 +66,6 @@ function BillBoardForm({ initialData }: Props) {
         try {
             setLoading(true);
 
-            console.log(data);
             if(initialData){
                 console.log("params_billboardId",params.billboardId);
                 const res = await axios.patch(

@@ -8,13 +8,13 @@ import {
     DropdownMenuSeparator,
     DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
-import { BillboardColumn } from "./columns";
 import { Button } from "@/components/ui/button";
 import { CopyIcon, EditIcon, MoreHorizontal, Trash2Icon } from "lucide-react";
 import toast from "react-hot-toast";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import axios from "axios";
+import { BillboardColumn } from "../../../billboards/[billboardId]/components/columns";
 
 interface Props {
     data: BillboardColumn;
