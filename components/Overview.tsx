@@ -31,16 +31,12 @@ function Overview({ data }: Props) {
 
     targetPercentage()
 
-
-  }, [])
+  }, [data])
 
 
   const dataFormatter = (number: number) => {
     return "$ " + Intl.NumberFormat("us").format(number).toString();
   };
-
-
-
 
   return (
     <div className="space-y-4 ">
@@ -57,7 +53,7 @@ function Overview({ data }: Props) {
       <Card>
         <Title>Sales Overview (2023)</Title>
         <Subtitle>
-        Display an overview of sales data, including revenue, total orders, average order value, and top-selling products.
+          Display an overview of sales data, including revenue, total orders, average order value, and top-selling products.
         </Subtitle>
         <BarChart
           className="mt-6"
