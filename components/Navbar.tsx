@@ -1,15 +1,17 @@
 import { UserButton, auth } from '@clerk/nextjs'
 import React from 'react'
-import {redirect} from 'next/navigation'
+import { redirect } from 'next/navigation'
 import MainNav from './MainNav'
 import StoreSwitcher from './StoreSwitcher'
 import prismaDB from '@/lib/prismaDB'
+import { useTheme } from 'next-themes'
+import ModeToggle from './ui/toggle-dark-mode'
 
 async function Navbar() {
 
-  const {userId} = auth();
+  const { userId } = auth();
 
-  if(!userId){
+  if (!userId) {
     redirect('/sign-in')
   }
   const stores = await prismaDB.store.findMany({
@@ -27,9 +29,10 @@ async function Navbar() {
         <MainNav className="mx-6" />
 
         <div className='ml-auto flex items-center space-x-4'>
-            <UserButton  afterSignOutUrl='/'/>
-        </div>
+          <ModeToggle />
 
+          <UserButton afterSignOutUrl='/' />
+        </div>
 
       </div>
 
