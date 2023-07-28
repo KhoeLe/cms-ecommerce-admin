@@ -23,6 +23,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
+import { addColor } from "../actions";
 
 interface Props {
     initialData: Color | null;
@@ -64,12 +65,9 @@ function SizeForm({ initialData }: Props) {
                     data
                 );
             } else {
-                const res = await axios.post(
-                    `/api/${params.storeId}/colors`,
-                    data
-                );
+
+                await addColor(data, params.storeId);
             }
-            router.refresh();
             router.push(`/${params.storeId}/colors`);
 
             toast.success(toastMessage);
@@ -104,7 +102,6 @@ function SizeForm({ initialData }: Props) {
         }
     };
 
-    console.log(params);
     return (
         <>
             <AlertModal

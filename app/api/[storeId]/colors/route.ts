@@ -1,6 +1,5 @@
 import prismaDB from "@/lib/prismaDB";
 import { auth } from "@clerk/nextjs";
-import { data } from "autoprefixer";
 import { NextResponse } from "next/server";
 
 export async function POST(
