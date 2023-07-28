@@ -12,6 +12,14 @@ interface Props {
 }
 
 async function ColorsPage({params} : Props) {
+    // const colors = await prismaDB.color.findMany({
+    //     where: {
+    //         storeId: params.storeId
+    //       },
+    //     orderBy: {
+    //         createdAt: "desc",
+    //     },
+    // });
 
     const colors = await getColor(params.storeId)
 
