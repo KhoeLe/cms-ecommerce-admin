@@ -1082,17 +1082,17 @@
   resolved "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.5.tgz"
   integrity sha512-xrO9OoVPqFuYyR/loIHjnbvvyRZREYKLjxV4+dY6v3FQR3stQ9ZxIGkaclF7YhI9hfjpuTbu14hZEy94qKLtOA==
 
-"@types/react-dom@18.2.12":
-  version "18.2.12"
-  resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.2.12.tgz"
-  integrity sha512-QWZuiA/7J/hPIGocXreCRbx7wyoeet9ooxfbSA+zbIWqyQEE7GMtRn4A37BdYyksnN+/NDnWgfxZH9UVGDw1hg==
+"@types/react-dom@18.2.14":
+  version "18.2.14"
+  resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.2.14.tgz"
+  integrity sha512-V835xgdSVmyQmI1KLV2BEIUgqEuinxp9O4G6g3FqO/SqLac049E53aysv0oEFD2kHfejeKU+ZqL2bcFWj9gLAQ==
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@18.2.27":
-  version "18.2.27"
-  resolved "https://registry.npmjs.org/@types/react/-/react-18.2.27.tgz"
-  integrity sha512-Wfv7B7FZiR2r3MIqbAlXoY1+tXm4bOqfz4oRr+nyXdBqapDBZ0l/IGcSlAfvxIHEEJjkPU0MYAc/BlFPOcrgLw==
+"@types/react@*", "@types/react@18.2.33":
+  version "18.2.33"
+  resolved "https://registry.npmjs.org/@types/react/-/react-18.2.33.tgz"
+  integrity sha512-v+I7S+hu3PIBoVkKGpSYYpiBT1ijqEzWpzQD62/jm4K74hPpSP7FF9BnKG6+fg2+62weJYkkBWDJlZt5JO/9hg==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
