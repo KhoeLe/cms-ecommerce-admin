@@ -935,16 +935,16 @@
   dependencies:
     tslib "^2.4.0"
 
-"@tanstack/react-table@^8.11.2":
+"@tanstack/react-table@^8.9.3":
   version "8.11.2"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-table/-/react-table-8.11.2.tgz#e584dbac8eb3ccce1facfe383863ac35c0ff1bb5"
+  resolved "https://registry.npmjs.org/@tanstack/react-table/-/react-table-8.11.2.tgz"
   integrity sha512-ztLg2OpM3HZIWzkQYjQER1inZuhbt79fBwZxc9bPXzsvqY+7RYI3dCZLw3CynYd9s4YltdrTbmSyh4xQSHexDQ==
   dependencies:
     "@tanstack/table-core" "8.11.2"
 
 "@tanstack/table-core@8.11.2":
   version "8.11.2"
-  resolved "https://registry.yarnpkg.com/@tanstack/table-core/-/table-core-8.11.2.tgz#34c00547dca178a1409b7f5385704f8b435e23ab"
+  resolved "https://registry.npmjs.org/@tanstack/table-core/-/table-core-8.11.2.tgz"
   integrity sha512-rR0VEQOtr0ARLvaNLaSQnt2BVwOp0OavOUA0LcZ3N45tLYXc4sXruNv8kJ7R7+5W1CrzGha217tzjBG83CpoMQ==
 
 "@tremor/react@^3.4.1":
@@ -3920,10 +3920,10 @@ tailwindcss-animate@^1.0.6:
   resolved "https://registry.npmjs.org/tailwindcss-animate/-/tailwindcss-animate-1.0.7.tgz"
   integrity sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==
 
-tailwindcss@3.3.5:
-  version "3.3.5"
-  resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.3.5.tgz"
-  integrity sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==
+tailwindcss@3.4.0:
+  version "3.4.0"
+  resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.0.tgz"
+  integrity sha512-VigzymniH77knD1dryXbyxR+ePHihHociZbXnLZHUyzf2MMs2ZVqlUrZ3FvpXP8pno9JzmILt1sZPD19M3IxtA==
   dependencies:
     "@alloc/quick-lru" "^5.2.0"
     arg "^5.0.2"
@@ -4282,9 +4282,9 @@ zod@^3.21.4:
   resolved "https://registry.npmjs.org/zod/-/zod-3.22.4.tgz"
   integrity sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==
 
-zustand@^4.4.7:
+zustand@^4.3.8:
   version "4.4.7"
-  resolved "https://registry.yarnpkg.com/zustand/-/zustand-4.4.7.tgz#355406be6b11ab335f59a66d2cf9815e8f24038c"
+  resolved "https://registry.npmjs.org/zustand/-/zustand-4.4.7.tgz"
   integrity sha512-QFJWJMdlETcI69paJwhSMJz7PPWjVP8Sjhclxmxmxv/RYI7ZOvR5BHX+ktH0we9gTWQMxcne8q1OY8xxz604gw==
   dependencies:
     use-sync-external-store "1.2.0"
