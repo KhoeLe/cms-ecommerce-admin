@@ -66,7 +66,7 @@ function SizeForm({ initialData }: Props) {
                 );
             } else {
 
-                await addColor(data, params.storeId);
+                await addColor(data, params.storeId.toString());
             }
             router.push(`/${params.storeId}/colors`);
 
