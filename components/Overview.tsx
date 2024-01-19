@@ -21,17 +21,15 @@ function Overview({ data }: Props) {
     return total;
   }
 
-
   useEffect(() => {
     const targetPercentage = () => {
-      let target = (calculateTotalSales() / TARGET_SALE) * 100
-
-      return setTarget(Number(target.toFixed(2)))
-    }
-
-    targetPercentage()
-
-  }, [data])
+      let target = (calculateTotalSales() / TARGET_SALE) * 100;
+      return setTarget(Number(target.toFixed(2)));
+    };
+  
+    targetPercentage();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
 
   const dataFormatter = (number: number) => {
