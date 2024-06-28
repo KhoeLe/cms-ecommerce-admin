@@ -87,37 +87,45 @@
   dependencies:
     csstype "3.1.1"
 
-"@cloudinary-util/url-loader@^3.22.0":
-  version "3.23.0"
-  resolved "https://registry.npmjs.org/@cloudinary-util/url-loader/-/url-loader-3.23.0.tgz"
-  integrity sha512-Tp6TrAkOYkgT3CyIU4nXS4utLkYN9nquTQSNW6Qqmb7vA7Y1MaSRty+F2FHV84WETK9XQDCfdCn4B+SyH4sWWw==
+"@cloudinary-util/url-loader@^4.1.1":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-4.2.0.tgz#8d686666b5214db1daefd392a115e8a708f968d7"
+  integrity sha512-fpCFqFPAN/f9Gt//25qLXNDYwy5EcOudRzDPOrsEBH6aMwEdFaJuPxvLiP0IP5MCihKji/XDr9QJQ9Wa+amNSA==
   dependencies:
-    "@cloudinary-util/util" "2.3.0"
-    "@cloudinary/url-gen" "^1.10.2"
+    "@cloudinary-util/util" "3.0.0"
+    "@cloudinary/url-gen" "1.15.0"
+    zod "^3.22.4"
 
-"@cloudinary-util/util@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.npmjs.org/@cloudinary-util/util/-/util-2.3.0.tgz"
-  integrity sha512-0Gojd+ZRQjJQmlBEAa8Ua94amvx7uWHoUzVUEGi1S8bgF1wPcMqG07cSUGQfRwHsFQ/9XOesx76Df622E+CevA==
+"@cloudinary-util/util@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/util/-/util-3.0.0.tgz#4096e0190108b2680c0027bf9afaeca039cea6cc"
+  integrity sha512-o6cJsN49OIelLcSkqUf4WzgefpePDFsAaeQfJbpcKhVdtvmWv71K0oZwMXuX62IY1OolqIg0etMiHtWZPhvPNA==
 
 "@cloudinary-util/util@^2.3.0":
   version "2.4.0"
-  resolved "https://registry.npmjs.org/@cloudinary-util/util/-/util-2.4.0.tgz"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/util/-/util-2.4.0.tgz#a29918c82113f92774ef856bdbf41c61307c7296"
   integrity sha512-RJW/K1hvm+qL2civTWgg7iKdTPDMLmpFBvH03KUkDxuDk/xi9E9x9nPthEsmdDy65GdCcZm0UKnErXXgKzMOQQ==
 
-"@cloudinary/transformation-builder-sdk@^1.10.0":
-  version "1.10.1"
-  resolved "https://registry.npmjs.org/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.10.1.tgz"
-  integrity sha512-UUb1wS/eWCf4YBThGszoBBzH6kP+frdd5JeJkF0/SOwbX3tkcrdzxD+Srn5GXPCqzf6Gw1nrGrv/3U9hiZP55A==
+"@cloudinary/transformation-builder-sdk@^1.10.0", "@cloudinary/transformation-builder-sdk@^1.13.0":
+  version "1.13.3"
+  resolved "https://registry.yarnpkg.com/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.13.3.tgz#d87be3176fc0883fd2f66dddd935b15f422eee33"
+  integrity sha512-tBMpjcwBjUgINGm2lKodb1fe32yBeq2KTSD7TrrFPm2/dQOb7lKmVuDaDe89IPcV+QZbb1JY/ZWL9pZjUV4aKw==
   dependencies:
     "@cloudinary/url-gen" "^1.7.0"
 
-"@cloudinary/url-gen@^1.10.2", "@cloudinary/url-gen@^1.7.0":
-  version "1.16.0"
-  resolved "https://registry.npmjs.org/@cloudinary/url-gen/-/url-gen-1.16.0.tgz"
-  integrity sha512-0hbxLuoTGgd555LLZKf8Ut5ey3lIaRTyvtvqD99rLeKUsbq8vrdFoSSwIP+se8pglO5ZSz6y8x6Iu5ddY3wyMw==
+"@cloudinary/url-gen@1.15.0":
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary/url-gen/-/url-gen-1.15.0.tgz#a55c9b51cb27301e0bdc4d60e44a7e73d13db103"
+  integrity sha512-bjU67eZxLUgoRy/Plli4TQio7q6P31OYqnEgXxeN9TKXrzr6h0DeEdIUhKI9gy3HkEBWXWWJIPh7j7gkOJPnyA==
   dependencies:
     "@cloudinary/transformation-builder-sdk" "^1.10.0"
+
+"@cloudinary/url-gen@^1.7.0":
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary/url-gen/-/url-gen-1.19.0.tgz#da8b0ec12a33301482a71e309a19401d241b1770"
+  integrity sha512-3WSqYAMEe8lcYMFmkNPhOfv6Ql76mpf8O7YEC+CCaoIYrfBubzzeF8yENCaZK9tFJEHvMepI+uWWfilNrz48XA==
+  dependencies:
+    "@cloudinary/transformation-builder-sdk" "^1.13.0"
 
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
@@ -199,9 +207,9 @@
   resolved "https://registry.npmjs.org/@headlessui/tailwindcss/-/tailwindcss-0.2.0.tgz"
   integrity sha512-fpL830Fln1SykOCboExsWr3JIVeQKieLJ3XytLe/tt1A0XzqUthOftDmjcCYLW62w7mQI7wXcoPXr3tZ9QfGxw==
 
-"@hookform/resolvers@^3.6.0":
+"@hookform/resolvers@^3.1.1":
   version "3.6.0"
-  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-3.6.0.tgz#71ae08acf7f7624fb24ea0505de00b9001a63687"
+  resolved "https://registry.npmjs.org/@hookform/resolvers/-/resolvers-3.6.0.tgz"
   integrity sha512-UBcpyOX3+RR+dNnqBd0lchXpoL8p4xC21XP8H6Meb8uve5Br1GCnmg0PcBoKKqPKgGu9GHQ/oygcmPrQhetwqw==
 
 "@humanwhocodes/config-array@^0.11.13":
@@ -3056,12 +3064,12 @@ natural-compare@^1.4.0:
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-next-cloudinary@^5.19.0:
-  version "5.19.0"
-  resolved "https://registry.npmjs.org/next-cloudinary/-/next-cloudinary-5.19.0.tgz"
-  integrity sha512-YCmywqTtCbXr8MnS2WzoX90yvnJKoFtwE7/+/IGA4ZAYr1iP+jcjDuguXoMQiRM4rV7mAQEAWW0UiirLdnVbGg==
+next-cloudinary@^5.20.0:
+  version "5.20.0"
+  resolved "https://registry.yarnpkg.com/next-cloudinary/-/next-cloudinary-5.20.0.tgz#1a72e51f489a5cbd24c979afd0ba99f6a6fe8089"
+  integrity sha512-oEe//iguL/fZAJH2zTSs0Kyfv6k0vhXoA07L1rX4UzQrqEmyT741UwwasnYN1qOYSZuLdum97CbJO9JkDARwIQ==
   dependencies:
-    "@cloudinary-util/url-loader" "^3.22.0"
+    "@cloudinary-util/url-loader" "^4.1.1"
     "@cloudinary-util/util" "^2.3.0"
 
 next-themes@^0.2.1:
@@ -4284,6 +4292,11 @@ zod@^3.21.4:
   version "3.22.4"
   resolved "https://registry.npmjs.org/zod/-/zod-3.22.4.tgz"
   integrity sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==
+
+zod@^3.22.4:
+  version "3.23.8"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.23.8.tgz#e37b957b5d52079769fb8097099b592f0ef4067d"
+  integrity sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==
 
 zustand@^4.3.8:
   version "4.4.7"
